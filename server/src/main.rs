@@ -34,7 +34,7 @@ fn configure_server() -> anyhow::Result<(ServerConfig, Vec<u8>)> {
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
-    let server_addr = "127.0.0.1:5000".parse().unwrap();
+    let server_addr = "0.0.0.0:5000".parse().unwrap();
     let (mut incoming, _server_cert) = make_server_endpoint(server_addr)?;
     // accept a single connection
     let incoming_conn = incoming.next().await.unwrap();

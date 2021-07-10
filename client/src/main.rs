@@ -40,7 +40,7 @@ async fn main() -> anyhow::Result<()> {
     let mut endpoint_builder = Endpoint::builder();
     endpoint_builder.default_client_config(client_cfg);
 
-    let (endpoint, _) = endpoint_builder.bind(&"127.0.0.1:0".parse()?)?;
+    let (endpoint, _) = endpoint_builder.bind(&"0.0.0.0:0".parse()?)?;
 
     // connect to server
     let quinn::NewConnection { connection, .. } = endpoint
